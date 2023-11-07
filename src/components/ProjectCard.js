@@ -43,7 +43,7 @@ export default function ProjectCard(props) {
             </a>
           ) : null}
 
-          <a href={project.links[1]}>
+          <a href={project.links[project.links.length - 1]}>
             <span className="dark:text-neutral-300">Github</span>
           </a>
         </div>
