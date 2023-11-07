@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 import "./App.css";
 
 import Intro from "./components/Intro";
@@ -50,6 +54,22 @@ function App() {
       });
   };
 
+  const sendMessage = (result) => {
+    if (result == "SUCCESS") {
+      toast.success("Your message has been sent!");
+    } else if (result == "BAŞARILI") {
+      toast.success("Mesajınız gönderildi!");
+    } else if (result == "FAIL") {
+      toast.error("Your message hasn't been sent");
+    } else if (result == "BAŞARISIZ") {
+      toast.error("Mesaj Gönderilemedi!");
+    } else {
+      console.log("şkajsdhfşajsdafşlkjşldfkjşalksdjflşka jsdl");
+    }
+
+    console.log("lkjasdbnfkjandsf");
+  };
+
   return (
     <>
       {curLang === "tr" ? (
@@ -62,7 +82,11 @@ function App() {
           <Skills titles={data.tr.titles} />
           <Profile profile={data.tr.profile} titles={data.tr.titles} />
           <Projects projects={data.tr.projects} titles={data.tr.titles} />
-          <Contact titles={data.tr.titles} lang="TR" />
+          <Contact
+            titles={data.tr.titles}
+            lang="TR"
+            sendMessage={sendMessage}
+          />
         </>
       ) : (
         <>
@@ -74,9 +98,14 @@ function App() {
           <Skills titles={data.en.titles} />
           <Profile profile={data.en.profile} titles={data.en.titles} />
           <Projects projects={data.en.projects} titles={data.en.titles} />
-          <Contact titles={data.en.titles} lang="EN" />
+          <Contact
+            titles={data.en.titles}
+            lang="EN"
+            sendMessage={sendMessage}
+          />
         </>
       )}
+      <ToastContainer />
     </>
   );
 }

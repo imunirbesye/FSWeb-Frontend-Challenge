@@ -5,25 +5,25 @@ import {
   faCodepen,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import emailjs from "emailjs-com";
+import emailjs, { send } from "emailjs-com";
 import "./contact.css";
 
 const initialTR = {
   name: "Adı Soyadı",
-  number: "0 (5--) --- -- --",
+  number: "(5--) --- -- --",
   email: "E-Mail Adresi",
   message: "Mesajınız...",
 };
 
 const initialEN = {
   name: "Name Surname",
-  number: "0 (5--) --- -- --",
+  number: "(5--) --- -- --",
   email: "E-Mail Address",
   message: "Message...",
 };
 
 export default function Contact(props) {
-  const { titles, lang } = props;
+  const { titles, lang, sendMessage } = props;
   const [toggle, setToggle] = useState(false);
   const [form, setForm] = useState(initialTR);
 
@@ -52,11 +52,22 @@ export default function Contact(props) {
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, event.target, USER_ID).then(
       (result) => {
-        if (lang === "TR") setForm(initialTR);
-        else setForm(initialEN);
+        if (lang === "TR") {
+          setForm(initialTR);
+          console.log(sendMessage);
+          sendMessage("BAŞARILI");
+        } else {
+          setForm(initialEN);
+          sendMessage("SUCCESS");
+        }
       },
       (error) => {
-        console.log(error.text);
+        if (lang === "TR") {
+          sendMessage("BAŞARISIZ");
+        } else {
+          sendMessage("FAIL");
+        }
+        console.log("şksdjahfşakjsd");
       }
     );
   };
@@ -124,7 +135,7 @@ export default function Contact(props) {
                 onChange={handleChange}
               />
               <input
-                type="text"
+                type="number"
                 name="from_number"
                 placeholder={form.number}
                 onChange={handleChange}
