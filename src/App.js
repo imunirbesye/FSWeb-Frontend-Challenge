@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -19,9 +19,22 @@ function App() {
   const [curLang, setCurLang] = useState(navigator.language);
   const [products, setProducts] = useState({});
 
+  const localSLang = localStorage.getItem("language");
+
+  useEffect(() => {
+    if (localSLang && localSLang !== curLang) {
+      changeLanguage();
+    }
+  }, []);
+
   const changeLanguage = () => {
-    if (curLang === "tr") setCurLang("en");
-    else setCurLang("tr");
+    if (curLang === "tr") {
+      setCurLang("en");
+      localStorage.setItem("language", "en");
+    } else {
+      setCurLang("tr");
+      localStorage.setItem("language", "tr");
+    }
     axiosThings();
   };
 
