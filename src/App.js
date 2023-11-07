@@ -68,13 +68,13 @@ function App() {
   };
 
   const sendMessage = (result) => {
-    if (result == "SUCCESS") {
+    if (result === "SUCCESS") {
       toast.success("Your message has been sent!");
-    } else if (result == "BAŞARILI") {
+    } else if (result === "BAŞARILI") {
       toast.success("Mesajınız gönderildi!");
-    } else if (result == "FAIL") {
+    } else if (result === "FAIL") {
       toast.error("Your message hasn't been sent");
-    } else if (result == "BAŞARISIZ") {
+    } else if (result === "BAŞARISIZ") {
       toast.error("Mesaj Gönderilemedi!");
     } else {
       console.log("şkajsdhfşajsdafşlkjşldfkjşalksdjflşka jsdl");
