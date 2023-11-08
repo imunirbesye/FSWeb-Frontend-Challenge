@@ -40,7 +40,10 @@ export const data = {
         description:
           "Basit, kişiselleştirilebilir, minimal kullanıcının hangi çerezleri kabul edip etmeyeceğini seçmesine yarayan bir çerez sistemi. Bu Vanilla JS, SCSS ve Parcel Bundler kullanılarak oluşturuldu ve NPM paketi olarak mevcut ve Git Repository herhangi bir kode ve tema değişkiliği yapılmasına olanak sağlamaktadır.",
         techs: ["React", "HTML", "CSS"],
-        links: ["https://github.com/imunirbesye/fsweb-s11g1-shopping-cart"],
+        links: [
+          "https://fsweb-s11g1-shopping-cart-b887227fa-munir-besyes-projects.vercel.app/",
+          "https://github.com/imunirbesye/fsweb-s11g1-shopping-cart",
+        ],
         resim: "https://i.ibb.co/j5d4xVn/shoppingcart.png",
       },
     ],
@@ -110,7 +113,10 @@ export const data = {
         description:
           "A simple, customizable, minimal setup cookie plugin that allows your users to select which cookies to accept or decline. This was created with vanilla JS, SCSS and Parcel Bundler and is available as a NPM package and the git repository makes any type of customization to code and themes possible.",
         techs: ["React", "HTML", "CSS"],
-        links: ["https://github.com/imunirbesye/fsweb-s11g1-shopping-cart"],
+        links: [
+          "https://fsweb-s11g1-shopping-cart-b887227fa-munir-besyes-projects.vercel.app/",
+          "https://github.com/imunirbesye/fsweb-s11g1-shopping-cart",
+        ],
         resim: "https://i.ibb.co/j5d4xVn/shoppingcart.png",
       },
     ],
