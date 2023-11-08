@@ -1,12 +1,4 @@
 import React from "react";
-import styled from "styled-components";
-/*
-const StyledImageDiv = styled.div`
-  background: url(${project.resim});
-  background-size: cover;
-  background-position: left top;
-  background-repeat: no-repeat;
-`;*/
 
 export default function ProjectCard(props) {
   const { project, titles } = props;

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { Navigate } from "react-router-dom";
 import "./intro.css";
 import resim1 from "../Assets/image1.jpg";
 import DarkMode from "./DarkMode";
